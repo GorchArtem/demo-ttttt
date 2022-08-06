@@ -24,7 +24,7 @@ public class TestsGoogle extends TestBase{
         step("Открыть страницу в гугл", () -> {
             googlePage.openURL("https://www.google.com/");
         });
-        Thread.sleep(5000);//убрать после дебага
+        Thread.sleep(10000);//убрать после дебага
         step("Ввести значение для поиска", () -> {
             googlePage.fillSearchField(value);
         });
