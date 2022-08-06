@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
-public class TestsGoogle {
+public class TestsGoogle extends TestBase{
     static GooglePage googlePage = new GooglePage();
 
 
