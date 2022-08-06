@@ -18,12 +18,13 @@ public class TestsGoogle extends TestBase{
     @Feature("Сборка в Jenkins")
     @Story("Создание новой сборки в Jenkins")
     @DisplayName("Fill out the registration form")
-    void searchTest() {
+    void searchTest() throws InterruptedException {
         String value = "Геральт из Ривии";
 
         step("Открыть страницу в гугл", () -> {
             googlePage.openURL("https://www.google.com/");
         });
+        Thread.sleep(5000);//убрать после дебага
         step("Ввести значение для поиска", () -> {
             googlePage.fillSearchField(value);
         });
