@@ -24,10 +24,9 @@ public class TestsYandex extends TestBase{
     void searchTest() throws InterruptedException {
         String value = "Геральт из Ривии";
 
-        step("Открыть страницу в гугл", () -> {
+        step("Открыть страницу в яндекс", () -> {
             yandexPage.openURL("https://yandex.ru/");
         });
-        Thread.sleep(10000);//убрать после дебага
         step("Ввести значение для поиска", () -> {
             yandexPage.fillSearchField(value);
         });
