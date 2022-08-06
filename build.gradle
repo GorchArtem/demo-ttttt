@@ -39,7 +39,7 @@ tasks.withType(JavaCompile) {
 }
 task form_test(type: Test) {
     useJUnitPlatform {
-        includeTags "googleTest"
+        includeTags "yandexTest"
     }
 }
 

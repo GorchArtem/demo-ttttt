@@ -6,13 +6,13 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class GooglePage {
+public class YandexPage {
 
 
 
     private final SelenideElement
-            searchField =  $(".gLFyf"),
-            resultsOnPage = $("#search");
+            searchField =  $("#text"),
+            resultsOnPage = $(".main__center");
 
 
     //actions

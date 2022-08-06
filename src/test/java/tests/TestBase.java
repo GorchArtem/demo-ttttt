@@ -13,10 +13,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase extends Attach {
+
+    static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
+
     @BeforeAll
     static void setUp() {
-        open("https://www.google.com/");
-        CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -31,6 +32,7 @@ public class TestBase extends Attach {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.holdBrowserOpen = true;
         String remoteDriverUrl = System.getProperty("remoteDriverUrl","selenoid.autotests.cloud/wd/hub");
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
         Configuration.remote = String.format("https://%s:%s@%s", credentialsConfig.login(), credentialsConfig.password(), remoteDriverUrl);
 
     }

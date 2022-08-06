@@ -1,6 +1,6 @@
 package tests;
 
-import Pages.GooglePage;
+import Pages.YandexPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -10,12 +10,12 @@ import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
-public class TestsGoogle extends TestBase{
-    static GooglePage googlePage = new GooglePage();
+public class TestsYandex extends TestBase{
+    static YandexPage yandexPage = new YandexPage();
 
 
     @Test
-    @Tag("googleTest")
+    @Tag("yandexTest")
     @Owner("GorchArtem")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Сборка в Jenkins")
@@ -25,15 +25,14 @@ public class TestsGoogle extends TestBase{
         String value = "Геральт из Ривии";
 
         step("Открыть страницу в гугл", () -> {
-//            googlePage.openURL("https://www.google.com/");
+            yandexPage.openURL("https://yandex.ru/");
         });
         Thread.sleep(10000);//убрать после дебага
         step("Ввести значение для поиска", () -> {
-            $(byName("q")).setValue(value).pressEnter();
-//            googlePage.fillSearchField(value);
+            yandexPage.fillSearchField(value);
         });
         step("Проверить выдачу результата", () -> {
-            googlePage.assertThatValuesIsTrue(value);
+            yandexPage.assertThatValuesIsTrue(value);
         });
 
     }
