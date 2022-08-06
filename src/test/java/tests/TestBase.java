@@ -11,11 +11,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase extends Attach {
-
-    static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
-
     @BeforeAll
-    static void beforeAll() {
+    static void setUp() {
+        CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

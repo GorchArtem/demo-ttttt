@@ -14,10 +14,9 @@ public class TestsGoogle {
     @Test
     @Tag("googleTest")
     @Owner("GorchArtem")
-    @Severity(SeverityLevel.NORMAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Сборка в Jenkins")
     @Story("Создание новой сборки в Jenkins")
-    @Link(name = "Demoqa", url = "https://demoqa.com/automation-practice-form")
     @DisplayName("Fill out the registration form")
     void searchTest() {
         String value = "Геральт из Ривии";
