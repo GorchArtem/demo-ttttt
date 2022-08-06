@@ -10,9 +10,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class TestBase extends Attach {
     @BeforeAll
     static void setUp() {
+        open("https://www.google.com/");
         CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
         SelenideLogger.addListener("allure", new AllureSelenide());
 

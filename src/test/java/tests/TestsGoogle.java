@@ -5,6 +5,9 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
+import static com.codeborne.selenide.Selectors.byName;
+import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
 public class TestsGoogle extends TestBase{
@@ -22,11 +25,12 @@ public class TestsGoogle extends TestBase{
         String value = "Геральт из Ривии";
 
         step("Открыть страницу в гугл", () -> {
-            googlePage.openURL("https://www.google.com/");
+//            googlePage.openURL("https://www.google.com/");
         });
         Thread.sleep(10000);//убрать после дебага
         step("Ввести значение для поиска", () -> {
-            googlePage.fillSearchField(value);
+            $(byName("q")).setValue(value).pressEnter();
+//            googlePage.fillSearchField(value);
         });
         step("Проверить выдачу результата", () -> {
             googlePage.assertThatValuesIsTrue(value);

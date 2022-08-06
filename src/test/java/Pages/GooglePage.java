@@ -10,7 +10,7 @@ public class GooglePage {
 
 
 
-    private SelenideElement
+    private final SelenideElement
             searchField =  $(".gLFyf"),
             resultsOnPage = $("#search");
 
