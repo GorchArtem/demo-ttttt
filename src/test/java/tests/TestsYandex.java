@@ -35,6 +35,7 @@ public class TestsYandex extends TestBase{
 
     }
 
+    @Test
     void failedSearchTest() throws InterruptedException {
         String value = "Геральт из Ривии";
 
@@ -50,6 +51,7 @@ public class TestsYandex extends TestBase{
 
     }
 
+    @Test
     @Disabled
     void searchTest3() throws InterruptedException {
         String value = "Геральт из Ривии";
